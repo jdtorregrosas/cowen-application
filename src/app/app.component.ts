@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { User, UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cowen-application';
+  users$: Observable<User[]>;
+  constructor(private userService: UserService) {
+    this.users$ = this.userService.getUsers();
+  }
 }
