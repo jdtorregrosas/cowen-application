@@ -9,7 +9,7 @@ import { Album } from '../model/album.model';
 })
 export class AlbumService {
 
-  albumsPath = '/albums'
+  private albumsPath = '/albums'
   constructor(private http: HttpClient) { }
 
   getAlbums(): Observable<Album[]> {

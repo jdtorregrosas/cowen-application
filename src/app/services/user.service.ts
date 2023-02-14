@@ -9,7 +9,7 @@ import { User } from '../model/user.model';
 })
 export class UserService {
 
-  usersPath = '/users'
+  private usersPath = '/users'
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User[]> {
