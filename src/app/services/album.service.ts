@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -12,7 +12,8 @@ export class AlbumService {
   private albumsPath = '/albums'
   constructor(private http: HttpClient) { }
 
-  getAlbums(): Observable<Album[]> {
-    return this.http.get<Album[]>(`${environment.apiBaseUrl}${this.albumsPath}`);
+  getAlbumsByUserId(userId: number): Observable<Album[]> {
+    const params = new HttpParams().set('userId', userId);
+    return this.http.get<Album[]>(`${environment.apiBaseUrl}${this.albumsPath}`, { params });
   }
 }
