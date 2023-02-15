@@ -1,8 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from 'src/app/app-routing.module';
-import { ModalComponent } from 'src/app/components/modal/modal.component';
+import { AppRoutingModule } from '../../app-routing.module';
+import { ModalComponent } from '../../components/modal/modal.component';
 
 import { AlbumsComponent } from './albums.component';
 

@@ -31,5 +31,8 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "allowSyntheticDefaultImports": true
+  "allowSyntheticDefaultImports": true,
+  "exclude": [
+    "**/*.spec.ts"
+  ]
 }

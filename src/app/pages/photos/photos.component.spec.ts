@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AppRoutingModule } from 'src/app/app-routing.module';
+import { AppRoutingModule } from '../../app-routing.module';
 
 import { PhotosComponent } from './photos.component';
 
