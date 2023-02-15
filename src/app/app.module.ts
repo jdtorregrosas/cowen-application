@@ -8,7 +8,9 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 import { FormsModule } from '@angular/forms';
 import { AlbumsComponent } from './pages/albums/albums.component';
 import { UsersComponent } from './pages/users/users.component';
+import { PhotosComponent } from './pages/photos/photos.component';
 import { AlbumCardComponent } from './components/album-card/album-card.component';
+import { PhotoCardComponent } from './components/photo-card/photo-card.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { AlbumCardComponent } from './components/album-card/album-card.component
     UserCardComponent,
     AlbumsComponent,
     UsersComponent,
+    PhotosComponent,
     AlbumCardComponent,
+    PhotoCardComponent
   ],
   imports: [
     BrowserModule,

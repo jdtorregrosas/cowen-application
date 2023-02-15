@@ -1,0 +1,8 @@
+<div class="page-container">
+  <div class="breadcrumbs"><a routerLink="/">Home</a>/<a [routerLink]="'/user/'+user?.id">{{user?.name}}</a>
+    /<span>Albums</span>/<span class="active">{{album?.title}}</span>/<span>Photos</span>
+  </div>
+  <div class="container">
+    <app-photo-card *ngFor="let photo of photos" [photo]="photo"></app-photo-card>
+  </div>
+</div>

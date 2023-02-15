@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Photo } from '../model/photo.model';
 
@@ -10,9 +10,19 @@ import { Photo } from '../model/photo.model';
 export class PhotoService {
 
   private photosPath = '/photos'
-  constructor(private http: HttpClient) { }
+  photos$ = new BehaviorSubject<Photo[]>([]);
 
-  getPhotosByAlbumId(albumId: number): Observable<Photo[]> {
+  constructor(private http: HttpClient) {
+    this.init();
+  }
+
+  public init() {
+    this.http.get<Photo[]>(`${environment.apiBaseUrl}${this.photosPath}`).subscribe((photos) => {
+      this.photos$.next(photos);
+    });
+  }
+
+  getPhotosByAlbumId(albumId: string): Observable<Photo[]> {
     const params = new HttpParams().set('albumId', albumId);
     return this.http.get<Photo[]>(`${environment.apiBaseUrl}${this.photosPath}`, { params });
   }
