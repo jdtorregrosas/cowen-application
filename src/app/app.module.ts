@@ -11,6 +11,8 @@ import { UsersComponent } from './pages/users/users.component';
 import { PhotosComponent } from './pages/photos/photos.component';
 import { AlbumCardComponent } from './components/album-card/album-card.component';
 import { PhotoCardComponent } from './components/photo-card/photo-card.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ErrorComponent } from './pages/error/error.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { PhotoCardComponent } from './components/photo-card/photo-card.component
     UsersComponent,
     PhotosComponent,
     AlbumCardComponent,
-    PhotoCardComponent
+    PhotoCardComponent,
+    NotFoundComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
