@@ -1,5 +1,36 @@
 # CowenApplication
 
+## Personal Notes
+
+1. The app doesn't need state management but to improve performance and reduce the number of api requests
+   I saved the first users request into an observable to be accessible within the UserService.
+2. I didn't use any library for styling
+3. The app routing is working like this:
+
+  - `/` Home: Lists all users with their details, it is possible to search by name.
+  - `/user/:userId` User albums: Lists all the albums by user ID, here is possible to create a new album,
+    the created album is using the endpoint but is created in memory,
+    this means that the new album is visible after creation but is not possible to navigate to it.
+  - `/user/:userId/album/:albumId` Album photos: Lists all the photos of an album
+  - `/not-found` Page not found message
+  - `/error` Generic Error message
+
+4. I did 2 unit tests `npm run test`
+
+  - One testing that a service is being called with the right parameters (photo.service.spec.ts)
+  - One testing that the component is being shown and hidden (modal.component.spec.ts)
+
+5. The e2e test written tests a happy path: `npm run e2e`
+
+  - Navigate to home
+  - Search a name
+  - Click a user card
+  - Check breadcrumbs
+  - Click an album
+  - Check a single photo
+
+6. To show random images I used https://picsum.photos/
+
 ## Coding challenge
 
 This offline challenge was invented to get a picture of your coding skills, git usage, documentation and ability to deliver a working result. Besides coding, we're

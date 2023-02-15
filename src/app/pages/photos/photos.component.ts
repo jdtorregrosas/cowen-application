@@ -27,22 +27,31 @@ export class PhotosComponent {
   ) { }
 
   ngOnInit(): void {
+    // Get url params for the parent route: userId
     this.route.parent?.paramMap.subscribe(params => {
       const userId = params.get('userId') ?? '';
+
+      // Get user by Id and save it as a local variable
       this.userService.getUserbyId(userId).subscribe(user => {
         this.user = user;
       })
     });
 
+    // Get albumId from url
     const albumId = this.route.snapshot.paramMap.get("albumId") ?? '';
+
+    // Get album by id and save it as local variable
     this.albumService.getAlbumById(albumId)
-    .pipe(catchError(error => {
+    .pipe(catchError(() => {
+
+      // In case of error navigate to generic error page
       this.router.navigate(['/error'], {replaceUrl: true});
       return of();
     })).subscribe(album => {
       this.album = album;
     })
 
+    // Get photos by album
     this.photoService.getPhotosByAlbumId(albumId).subscribe(photos => {
       this.photos = photos;
     })
