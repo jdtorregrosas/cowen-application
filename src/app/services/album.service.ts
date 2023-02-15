@@ -20,4 +20,8 @@ export class AlbumService {
   getAlbumById(albumId: string): Observable<Album | undefined> {
     return this.http.get<Album>(`${environment.apiBaseUrl}${this.albumsPath}/${albumId}`);
   }
+
+  createAlbum(userId: string, title: string){
+    return this.http.post(`${environment.apiBaseUrl}${this.albumsPath}`, {userId, title});
+  }
 }

@@ -11,6 +11,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { PhotosComponent } from './pages/photos/photos.component';
 import { AlbumCardComponent } from './components/album-card/album-card.component';
 import { PhotoCardComponent } from './components/photo-card/photo-card.component';
+import { ModalComponent } from './components/modal/modal.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ErrorComponent } from './pages/error/error.component';
 
@@ -24,6 +25,7 @@ import { ErrorComponent } from './pages/error/error.component';
     PhotosComponent,
     AlbumCardComponent,
     PhotoCardComponent,
+    ModalComponent,
     NotFoundComponent,
     ErrorComponent
   ],

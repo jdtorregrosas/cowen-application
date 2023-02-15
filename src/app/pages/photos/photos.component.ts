@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { catchError, of } from 'rxjs';
 import { Album } from 'src/app/model/album.model';
 import { Photo } from 'src/app/model/photo.model';
 import { User } from 'src/app/model/user.model';
@@ -18,6 +19,7 @@ export class PhotosComponent {
   photos: Photo[] | undefined;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private userService: UserService,
     private albumService: AlbumService,
@@ -33,7 +35,11 @@ export class PhotosComponent {
     });
 
     const albumId = this.route.snapshot.paramMap.get("albumId") ?? '';
-    this.albumService.getAlbumById(albumId).subscribe(album => {
+    this.albumService.getAlbumById(albumId)
+    .pipe(catchError(error => {
+      this.router.navigate(['/error'], {replaceUrl: true});
+      return of();
+    })).subscribe(album => {
       this.album = album;
     })
 
