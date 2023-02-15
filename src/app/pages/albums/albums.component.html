@@ -1,9 +1,9 @@
 <div class="page-container">
-  <div class="breadcrumbs"><a routerLink="/">Home</a>/<span class="active">{{user?.name}}</span>/<span>Albums</span>
+  <div data-testid="breadcrumbs" class="breadcrumbs"><a routerLink="/">Home</a>/<span class="active">{{user?.name}}</span>/<span>Albums</span>
   </div>
   <button class="btn" (click)="openModal()">Create new album</button>
   <div class="container">
-    <app-album-card *ngFor="let album of albums" [album]="album" (click)="showPhotos(album.id)"></app-album-card>
+    <app-album-card [attr.data-testid]="'album-'+album.id" *ngFor="let album of albums" [album]="album" (click)="showPhotos(album.id)"></app-album-card>
   </div>
   <app-modal #modal>
     <h2>Create new album</h2>

@@ -3,6 +3,6 @@
     /<span>Albums</span>/<span class="active">{{album?.title}}</span>/<span>Photos</span>
   </div>
   <div class="container">
-    <app-photo-card *ngFor="let photo of photos" [photo]="photo"></app-photo-card>
+    <app-photo-card [attr.data-testid]="'photo-'+photo.id" *ngFor="let photo of photos" [photo]="photo"></app-photo-card>
   </div>
 </div>

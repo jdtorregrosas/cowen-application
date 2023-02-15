@@ -1,8 +1,9 @@
 <div class="page-container">
   <h1>Users</h1>
-  Search by name: <input class="text-field" [ngModel]="searchName" (ngModelChange)="onChangeSearchName($event)"
+  Search by name:
+  <input data-testid="input-search-name" class="text-field" [ngModel]="searchName" (ngModelChange)="onChangeSearchName($event)"
     placeholder="Name" />
   <div class="container">
-    <app-user-card *ngFor="let user of filteredUsers" [user]="user" (click)="onUserClick(user.id)"></app-user-card>
+    <app-user-card [attr.data-testid]="'card-'+user.id" *ngFor="let user of filteredUsers" [user]="user" (click)="onUserClick(user.id)"></app-user-card>
   </div>
 </div>
