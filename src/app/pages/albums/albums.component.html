@@ -1,0 +1,8 @@
+<div class="page-container">
+  <div class="breadcrumbs"><a routerLink="/">Home</a>/<span class="active">{{user?.name}}</span>/<span>Albums</span>
+  </div>
+  <div class="container">
+    <app-album-card *ngFor="let album of albums" [album]="album" (click)="showPhotos(album.id)"></app-album-card>
+  </div>
+  <router-outlet></router-outlet>
+</div>

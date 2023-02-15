@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Album } from '../model/album.model';
 
@@ -12,8 +12,12 @@ export class AlbumService {
   private albumsPath = '/albums'
   constructor(private http: HttpClient) { }
 
-  getAlbumsByUserId(userId: number): Observable<Album[]> {
+  getAlbumsByUserId(userId: string): Observable<Album[]> {
     const params = new HttpParams().set('userId', userId);
     return this.http.get<Album[]>(`${environment.apiBaseUrl}${this.albumsPath}`, { params });
+  }
+
+  getAlbumById(albumId: string): Observable<Album | undefined> {
+    return this.http.get<Album>(`${environment.apiBaseUrl}${this.albumsPath}/${albumId}`);
   }
 }

@@ -6,14 +6,18 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { FormsModule } from '@angular/forms';
+import { AlbumsComponent } from './pages/albums/albums.component';
 import { UsersComponent } from './pages/users/users.component';
+import { AlbumCardComponent } from './components/album-card/album-card.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UserCardComponent,
+    AlbumsComponent,
     UsersComponent,
+    AlbumCardComponent,
   ],
   imports: [
     BrowserModule,
