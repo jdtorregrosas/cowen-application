@@ -1,27 +1,39 @@
 # CowenApplication
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
+## Coding challenge
 
-## Development server
+This offline challenge was invented to get a picture of your coding skills, git usage, documentation and ability to deliver a working result. Besides coding, we're
+interested in your ability to convert requirements into UI and UX experience.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### General
 
-## Code scaffolding
+Focus on a working solution rather than the most beautiful or complex
+Styling can be added, however a useable result is more important than awesome CSS
+If you can not finish a task or have an issue during implementation try to explain it in the git commit description and/or README file
+A git history is very important, please do not have a single final commit. We want to follow your flow of development.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Tasks
 
-## Build
+1. Create an Angular application that lists all users and their addresses provided by the users API of JSONPlaceholder
+2. The project should have at least one meaningful unit test using jest
+3. Add the possibility to view the albums and photos of a selected user.
+4. Add the possibility to create new albums.
+5. Add at least one meaningful end-to-end test for your application using cypress
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Optional
 
-## Running unit tests
+The tasks above are considered the "Pflicht", while this section allows you to stand out from other candidates (the "Kür").
+E.g. any pagination, sorting, filtering, drag-and-drop, styling, error reporting, analytics, integration with external services etc are a plus. Show off your skills here!
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Expectations
 
-## Running end-to-end tests
+Document your coding process with Git and publish your result to a Github or Gitlab repository. We'll clone this repo run your code locally on our machines.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The result should be a git history of your development process (a single commit with the complete application is not acceptable. We want to see multiple commits
+showing your progress), a README document on how to install and start your application, and a package.json with scripts to build and serve your application.
 
-## Further help
+Any styling of your HTML is not necessary. Using AngularJS is not acceptable. Simple is better than complicated. Consider your application a proof-of-concept, quicker development using tools to achieve the result is better than handcrafting every line but taking 5x as long. You can use whatever resources/libraries/open-
+source also (but not as a replacement) of the libraries previously mentioned.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+We will do a code review and look for standards, consistency, error handling, testing, readability, maintainability, correctness, usability, simplicity, leveraging of existing
+code/concepts/services and surprises.
